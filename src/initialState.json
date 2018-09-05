@@ -1,0 +1,15 @@
+{
+	"allTodos" : [
+		{
+			"id": 1,
+			"task": "I'm a sample complete task!",
+			"status": "complete"
+		},
+		{
+			"id": 2,
+			"task": "I'm a sample incomplete task!",
+			"status": "incomplete"
+		}
+	],
+	"showStatus" : "all"
+}

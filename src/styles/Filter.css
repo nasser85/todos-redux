@@ -1,0 +1,12 @@
+.filter-wrapper {
+	position: fixed;
+	bottom: 0;
+	background-color: black;
+	color: white;
+	width: 100%;
+	padding: 5px 10px 10px 10px;
+}
+.icon-wrapper {
+	max-width: 700px;
+	margin: auto;
+}

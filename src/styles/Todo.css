@@ -1,0 +1,11 @@
+.todo-container {
+	
+}
+.todo-icon {
+	display: inline;
+	float: right;
+}
+.todo-icon svg {
+	width: 1.2em;
+	height: 1.2em;
+}

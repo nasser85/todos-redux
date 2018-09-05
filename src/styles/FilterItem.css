@@ -1,0 +1,22 @@
+.filter-item {
+	display: inline-block;
+	width: 33%;
+	padding: 10px;
+	vertical-align: top;
+	cursor: pointer;
+}
+.filter-image svg{
+	height: 2em;
+	width: 2em;
+}
+.filter-label {
+	text-align: center;
+	margin: 0;
+}
+
+.filter-item:hover {
+	color: green;
+}
+.filter-item.selected {
+	color: green;
+}
