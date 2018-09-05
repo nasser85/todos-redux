@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Todo from './Todo'
+import Todo from '../containers/TodoContainer'
 import '../styles/TodoList.css'
 
 export default class TodoList extends Component {
@@ -10,7 +10,7 @@ export default class TodoList extends Component {
 	}
 	renderTodo(todo, index) {
 		return (
-			<Todo id={index}
+			<Todo id={todo.id}
 				  key={index}
 				  text={todo.task} 
 				  status={todo.status}></Todo>
