@@ -32,7 +32,7 @@ export default class TodoList extends Component {
 	}
 	triggerAdd() {
 		let todo = window.prompt('Type in your new todo!')
-		if ( todo != "") {
+		if ( todo != "" && todo != null) {
 			this.props.onAdd({
 				id: new Date().getTime(),
 				task: todo,
@@ -46,7 +46,7 @@ export default class TodoList extends Component {
 				<div className="todo-list-container">
 					{this.props.todos.filter(this.filterTodos).map(this.renderTodo)}
 				</div>
-				<span onClick={this.triggerAdd}>{ MdAdd() }</span>
+				<span className="add-button" onClick={this.triggerAdd}>{ MdAdd() }</span>
 			</div>
 		)
 	}
