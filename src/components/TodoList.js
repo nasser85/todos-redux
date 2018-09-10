@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { MdAdd } from 'react-icons/md'
+
 import Todo from '../containers/TodoContainer'
 import '../styles/TodoList.css'
 
@@ -8,6 +10,7 @@ export default class TodoList extends Component {
 		super(props)
 		this.renderTodo = this.renderTodo.bind(this)
 		this.filterTodos = this.filterTodos.bind(this)
+		this.triggerAdd = this.triggerAdd.bind(this)
 	}
 	renderTodo(todo, index) {
 		return (
@@ -27,12 +30,23 @@ export default class TodoList extends Component {
 				return true
 		}
 	}
+	triggerAdd() {
+		let todo = window.prompt('Type in your new todo!')
+		if ( todo != "") {
+			this.props.onAdd({
+				id: new Date().getTime(),
+				task: todo,
+				isComplete: false
+			})
+		}
+	}
 	render() {
 		return (
 			<div className="todo-list-wrapper">
 				<div className="todo-list-container">
 					{this.props.todos.filter(this.filterTodos).map(this.renderTodo)}
 				</div>
+				<span onClick={this.triggerAdd}>{ MdAdd() }</span>
 			</div>
 		)
 	}
