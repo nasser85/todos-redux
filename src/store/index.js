@@ -9,6 +9,7 @@ const consoleMessages = store => next => action => {
 	let result = next(action)
 	console.log(store.getState())
 	console.log(action)
+	console.groupEnd()
 	return result;
 }
 

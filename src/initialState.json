@@ -3,13 +3,12 @@
 		{
 			"id": 1,
 			"task": "I'm a sample complete task!",
-			"status": "complete"
+			"isComplete": true
 		},
 		{
 			"id": 2,
 			"task": "I'm a sample incomplete task!",
-			"status": "incomplete"
-		}
+			"isComplete": false		}
 	],
 	"showStatus" : "all"
 }

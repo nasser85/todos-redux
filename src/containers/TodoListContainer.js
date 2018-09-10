@@ -3,7 +3,8 @@ import { addTodo } from '../store/actions'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({
-	todos: state.allTodos
+	todos: state.allTodos,
+	showStatus: state.showStatus
 })
 
 const mapDispatchToProps = dispatch => ({

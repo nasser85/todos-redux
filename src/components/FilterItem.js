@@ -1,11 +1,20 @@
 import React, { Component } from 'react'
 import '../styles/FilterItem.css'
 
-const FilterItem = props => (
-	<div className={ props.isSelected ? "filter-item selected" : "filter-item"}>
-		<div className="filter-image">{ props.image() }</div>
-		<p className="filter-label"><small>{ props.label }</small></p>
-	</div>
-)
-
-export default FilterItem
+export default class FilterItem extends Component {
+	constructor(props) {
+		super(props)
+		this.selectFilter = this.selectFilter.bind(this)
+	}
+	selectFilter() {
+		this.props.onFilter(this.props.label.toLowerCase())
+	}
+	render() {
+		return (
+			<div onClick={this.selectFilter} className={this.props.label.toLowerCase() == this.props.showStatus  ? "filter-item selected" : "filter-item"}>
+				<div className="filter-image">{ this.props.image() }</div>
+				<p className="filter-label"><small>{ this.props.label }</small></p>
+			</div>
+		)
+	}
+}
