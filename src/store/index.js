@@ -13,4 +13,10 @@ const consoleMessages = store => next => action => {
 	return result;
 }
 
-export default (initialState={}) => applyMiddleware(consoleMessages)(createStore)(appReducer, initialState)
+const persistDataToLocalStorage = store => next => action => {
+	let result = next(action)
+	localStorage.todoApp = JSON.stringify(store.getState())
+	return result
+}
+
+export default (initialState={}) => applyMiddleware(consoleMessages, persistDataToLocalStorage)(createStore)(appReducer, initialState)

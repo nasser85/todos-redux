@@ -13,6 +13,9 @@ export default class Todo extends Component {
 			this[method] = this[method].bind(this)
 		})
 	}
+	componentWillUnmount() {
+		console.log('unmounting...')
+	}
 	componentDidUpdate() {
 		if (this.state.editing) {
 			let input = document.getElementById(`input-${this.props.id}`)
